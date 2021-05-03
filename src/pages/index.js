@@ -92,6 +92,20 @@ const IndexPage = () => {
               }
             }}
           />
+          {maren && !rimpa && (
+            <div
+              style={{
+                position: "absolute",
+                textAlign: "center",
+                marginLeft: "auto",
+                marginRight: "auto",
+                left: 0,
+                right: 0,
+              }}
+            >
+              <p style={{ textAlign: "center" }}>Trykk på meg</p>
+            </div>
+          )}
         </div>
         <div className="maren">
           <div style={{ height: 48 }}>
@@ -170,9 +184,9 @@ const IndexPage = () => {
                 position: "absolute",
                 marginLeft: "auto",
                 marginRight: "auto",
-                bottom: -20,
                 left: 0,
                 right: 0,
+                bottom: -20,
                 textAlign: "center",
                 justifyContent: "center",
                 alignItems: "center",
@@ -195,8 +209,23 @@ const IndexPage = () => {
               }
             }}
           />
+          {maren && !kien && (
+            <div
+              style={{
+                position: "absolute",
+                textAlign: "center",
+                marginLeft: "auto",
+                marginRight: "auto",
+                left: 0,
+                right: 0,
+              }}
+            >
+              <p style={{ textAlign: "center" }}>Trykk på meg</p>
+            </div>
+          )}
         </div>
       </div>
+
       <Fireworks play={fire} />
     </Layout>
   )

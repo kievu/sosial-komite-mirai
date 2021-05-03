@@ -81,6 +81,7 @@ body {
 }
 
 .rimpa {
+  position: relative;
   margin-right: 70px;
   margin-top: 0;
 }
@@ -95,6 +96,7 @@ body {
 }
 
 .kien {
+  position: relative;
   margin-top: 0;
   margin-left: 70px;
 }
