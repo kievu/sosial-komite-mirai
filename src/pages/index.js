@@ -17,14 +17,6 @@ const IndexPage = () => {
   const [rimpa, setRimpa] = React.useState(false)
   const [maren, setMaren] = React.useState(false)
 
-  React.useEffect(() => {
-    if (fire) {
-      setTimeout(() => {
-        setFire(false)
-      }, 2000)
-    }
-  }, [fire])
-
   return (
     <Layout>
       <Seo title="Sosialkomite 2021" />
@@ -88,7 +80,6 @@ const IndexPage = () => {
             onClick={() => {
               if (maren) {
                 setRimpa(true)
-                setFire(true)
               }
             }}
           />
@@ -134,6 +125,7 @@ const IndexPage = () => {
             }}
             onClick={() => {
               setMaren(true)
+              setFire(true)
               play()
             }}
           />
@@ -205,7 +197,6 @@ const IndexPage = () => {
             onClick={() => {
               if (maren) {
                 setKien(true)
-                setFire(true)
               }
             }}
           />
