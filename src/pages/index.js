@@ -29,7 +29,7 @@ const IndexPage = () => {
           </h1>
         ) : (
           <h1 style={{ textAlign: "center" }}>
-            🎈Avslørersel av sosialkomiteen til Mirai 2021
+            Avsløring av sosialkomiteen til Mirai 2021
           </h1>
         )}
       </div>
