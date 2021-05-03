@@ -2,18 +2,20 @@ import * as React from "react"
 
 import Layout from "../components/layout"
 import Seo from "../components/seo"
-import maren from "../images/maren.png"
+import marenImg from "../images/maren.png"
 import kienImg from "../images/kien.png"
 import rimpaImg from "../images/rimpa.png"
 import SupriseIcon from "../components/SupriseIcon"
 import useSound from "use-sound"
 import Fireworks from "../components/Fireworks"
+import StartIcon from "../components/StartIcon"
 
 const IndexPage = () => {
   const [play] = useSound("/vocaroo.mp3")
   const [fire, setFire] = React.useState(false)
   const [kien, setKien] = React.useState(false)
   const [rimpa, setRimpa] = React.useState(false)
+  const [maren, setMaren] = React.useState(false)
 
   React.useEffect(() => {
     if (fire) {
@@ -29,23 +31,24 @@ const IndexPage = () => {
       <Fireworks />
       <div style={{ display: "hidden", marginTop: 100 }} />
       <div style={{ maxWidth: 700, marginLeft: "auto", marginRight: "auto" }}>
-        <h1 style={{ textAlign: "center" }}>
-          La meg presentere Mirai sin sosialkomite 2021
-        </h1>
+        {maren ? (
+          <h1 style={{ textAlign: "center" }}>
+            La meg presentere Mirai sin sosialkomite 2021
+          </h1>
+        ) : (
+          <h1 style={{ textAlign: "center" }}>
+            🎈Avslørersel av sosialkomiteen til Mirai 2021
+          </h1>
+        )}
       </div>
       <div style={{ display: "hidden", marginTop: 50 }} />
-      <div
-        style={{
-          display: "flex",
-          alignItems: "flex-end",
-          justifyContent: "center",
-        }}
-      >
-        <div style={{ marginRight: 70 }}>
+      <div className="mini-container">
+        <div className="rimpa">
           <h3 style={{ textAlign: "center" }}>Den litt gale</h3>
           {rimpa ? (
             <div style={{ position: "relative" }}>
               <img
+                className="fade-in-image"
                 src={rimpaImg}
                 style={{ height: 200, width: 200, margin: 0 }}
               />
@@ -75,25 +78,34 @@ const IndexPage = () => {
             <SupriseIcon
               style={{ height: 170, width: 170 }}
               onClick={() => {
-                setRimpa(true)
-                setFire(true)
+                if (maren) {
+                  setRimpa(true)
+                  setFire(true)
+                }
               }}
             />
           )}
         </div>
-        <div
-          style={{
-            position: "relative",
-            display: "flex",
-            flexDirection: "column",
-            alignItems: "center",
-          }}
-        >
+        <div className="maren">
           <h3 style={{ textAlign: "center" }}>The Chief of Social Commitee</h3>
           <img
-            src={maren}
-            style={{ height: 280, width: 280, margin: 0 }}
+            src={marenImg}
+            className="App-logo"
+            style={{
+              height: 280,
+              width: 280,
+              margin: 0,
+              display: maren ? "block" : "none",
+            }}
+          />
+          <StartIcon
+            style={{
+              height: 280,
+              width: 280,
+              display: maren ? "none" : "block",
+            }}
             onClick={() => {
+              setMaren(true)
               play()
             }}
           />
@@ -111,7 +123,7 @@ const IndexPage = () => {
               left: 0,
               right: 0,
               textAlign: "center",
-              display: "flex",
+              display: maren ? "flex" : "none",
               justifyContent: "center",
               alignItems: "center",
             }}
@@ -120,11 +132,12 @@ const IndexPage = () => {
           </div>
         </div>
 
-        <div style={{ marginLeft: 70 }}>
+        <div className="kien">
           <h3 style={{ textAlign: "center" }}>Den fornuftige</h3>
           {kien ? (
             <div style={{ position: "relative" }}>
               <img
+                className="fade-in-image"
                 src={kienImg}
                 style={{ height: 200, width: 200, margin: 0 }}
               />
@@ -154,8 +167,10 @@ const IndexPage = () => {
             <SupriseIcon
               style={{ height: 170, width: 170 }}
               onClick={() => {
-                setKien(true)
-                setFire(true)
+                if (maren) {
+                  setKien(true)
+                  setFire(true)
+                }
               }}
             />
           )}
