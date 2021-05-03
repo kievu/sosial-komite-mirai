@@ -83,6 +83,7 @@ const IndexPage = () => {
               height: 170,
               width: 170,
               display: rimpa ? "none" : "block",
+              cursor: "pointer",
             }}
             onClick={() => {
               if (maren) {
@@ -115,6 +116,7 @@ const IndexPage = () => {
               height: 280,
               width: 280,
               display: maren ? "none" : "block",
+              cursor: "pointer",
             }}
             onClick={() => {
               setMaren(true)
@@ -184,6 +186,7 @@ const IndexPage = () => {
               height: 170,
               width: 170,
               display: kien ? "none" : "block",
+              cursor: "pointer",
             }}
             onClick={() => {
               if (maren) {
