@@ -225,7 +225,25 @@ const IndexPage = () => {
           )}
         </div>
       </div>
-
+      {maren && rimpa && kien && (
+        <div
+          className="fade-in-image"
+          style={{
+            maxWidth: 600,
+            marginLeft: "auto",
+            marginRight: "auto",
+            marginTop: 80,
+            marginBottom: 40,
+          }}
+        >
+          <p>
+            Tusen takk for alle de fantastiske søknadene som har kommet inn!
+            Denne gjengen skal sørge for det sosiale for å booste opp
+            arbeidsmoralen! Vi lover å arrangere tidenes fest når verden åpner
+            opp igjen, og før det skal vi sørge for kos remote! ❤️
+          </p>
+        </div>
+      )}
       <Fireworks play={fire} />
     </Layout>
   )
